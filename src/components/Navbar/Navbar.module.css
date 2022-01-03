@@ -7,6 +7,6 @@
     color: rgb(0, 0, 0);
 }
 
-.item.active {
+.item a.activeLink {
     color: rgb(255, 115, 0);
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './AddPost.module.css';
 
-const Post = () => {
+const AddPost = () => {
   return (
     <div>
       <textarea></textarea>
@@ -11,4 +11,4 @@ const Post = () => {
 
 }
 
-export default Post;
+export default AddPost;

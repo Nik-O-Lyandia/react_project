@@ -1,5 +1,6 @@
 .content {
   grid-area: c;
+  background-color: rgb(177, 244, 253);
 }
 
 .item {

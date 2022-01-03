@@ -7,3 +7,5 @@ function Mainpage() {
         <Posts />
     );
 }
+
+export default Mainpage;
