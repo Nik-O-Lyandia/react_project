@@ -9,20 +9,6 @@ const Profile = () => {
     <div>
       ava + description
     </div>
-    <div>
-      My posts
-      <div>
-        New post
-      </div>
-      <div className={style.posts}>
-        <div className={style.item}>
-          post 1
-        </div>
-        <div className='item'>
-          post 2
-        </div>
-      </div>
-    </div>
   </div>
 }
 
