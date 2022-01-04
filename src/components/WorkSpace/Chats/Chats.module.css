@@ -6,3 +6,25 @@
 .item {
   color: rgb(255, 47, 64);
 }
+
+.dialogs {
+  display: grid;
+  grid-template-columns: 2fr 10fr;
+}
+
+.dialogsItems {
+  padding: 10px;
+  color: white;
+}
+
+.dialogsItems .active {
+  color: rgb(255, 47, 64);
+}
+
+.messages {
+  padding: 10px;
+}
+
+.messages .message {
+  color: white;
+}
