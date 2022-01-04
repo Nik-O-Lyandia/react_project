@@ -2,9 +2,9 @@ import React from 'react';
 import style from './Mainpage.module.css';
 import Posts from './Posts/Posts';
 
-function Mainpage() {
+function Mainpage(props) {
     return (
-        <Posts />
+        <Posts state={props.state} />
     );
 }
 

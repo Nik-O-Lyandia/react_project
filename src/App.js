@@ -7,7 +7,7 @@ import Friends from './components/WorkSpace/Friends/Friends';
 import Chats from './components/WorkSpace/Chats/Chats';
 import Mainpage from './components/WorkSpace/Mainpage/Mainpage';
 
-function App() {
+function App(props) {
   return (
     <BrowserRouter>
       <div className='app-wrapper'>
@@ -15,10 +15,10 @@ function App() {
         <Navbar />
         <div className='app-wrapper-content'>
           <Routes>
-            <Route path='/' exact element={<Mainpage />} />
+            <Route path='/' exact element={<Mainpage state={props.state.mainPage} />} />
             <Route path='/profile' element={<Profile />} />
             <Route path='/friends' element={<Friends />} />
-            <Route path='/chats' element={<Chats />} />
+            <Route path='/chats' element={<Chats state={props.state.chatsPage} />} />
           </Routes>
         </div>
       </div>
