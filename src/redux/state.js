@@ -19,12 +19,21 @@ let state = {
         messages: [
             {id: 1, message: 'Hi'},
             {id: 2, message: 'How is your it-kamasutra?'},
-            {id: 3, message: 'Yo'},
-            {id: 4, message: 'Yo'},
-            {id: 5, message: 'Yo'}
+            {id: 3, message: 'Yo 3'},
+            {id: 4, message: 'Yo 4'},
+            {id: 5, message: 'Yo 5'}
         ]
     },
-    sidebar: {}
+    sidebar: {},
+    friendsPage: {
+        friends: [
+            {id: 1, name: 'Dima', surname: 'Dimov'},
+            {id: 2, name: 'Yaroslav', surname: 'Koval'},
+            {id: 3, name: 'Dima', surname: 'Smirnov'},
+            {id: 4, name: 'Uliya', surname: 'Timoshenko'},
+            {id: 5, name: 'Yelena', surname: 'Karpova'},
+        ]
+    }
 }
 
 export default state;

@@ -1,18 +1,15 @@
 import React from 'react';
 import style from './Friends.module.css';
+import FriendItem from './FriendItem/FriendItem';
 
-const Friends = () => {
-    return <div className={style.content}>
-    <div>
-      Friend 1
+const Friends = (props) => {
+
+  let friendsElements = props.state.friends.map(f => <FriendItem id={f.id} name={f.name} surname={f.surname} />);
+  return (
+    <div className={style.content}>
+      {friendsElements}
     </div>
-    <div>
-      Friend 2
-    </div>
-    <div>
-      Friend 3
-    </div>
-  </div>
+  )
 }
 
 export default Friends;
