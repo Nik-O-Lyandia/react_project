@@ -11,12 +11,12 @@ function App(props) {
   return (
     <BrowserRouter>
       <div className='app-wrapper'>
-        <Header />
+        <Header logo={props.state.headerData.logo} />
         <Navbar />
         <div className='app-wrapper-content'>
           <Routes>
             <Route path='/' exact element={<Mainpage state={props.state.mainPage} />} />
-            <Route path='/profile' element={<Profile />} />
+            <Route path='/profile' element={<Profile profileData={props.state.profileData} />} />
             <Route path='/friends' element={<Friends state={props.state.friendsPage} />} />
             <Route path='/chats' element={<Chats state={props.state.chatsPage} />} />
           </Routes>

@@ -16,7 +16,6 @@ const Message = (props) => {
 
 const Chats = (props) => {
 
-  console.log(props.state);
   let ChatsElements = props.state.chats.map(d => <ChatItem name={d.name} id={d.id} />);
   let messagesElements = props.state.messages.map(m => <Message message={m.message} />);
 

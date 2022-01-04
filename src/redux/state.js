@@ -1,3 +1,5 @@
+import logo from '../imgs/flat_pink_logo.png';
+
 let state = {
     mainPage: {
         posts: [
@@ -33,6 +35,12 @@ let state = {
             {id: 4, name: 'Uliya', surname: 'Timoshenko'},
             {id: 5, name: 'Yelena', surname: 'Karpova'},
         ]
+    },
+    headerData: {
+        logo: logo
+    },
+    profileData: {
+        imgAddress: 'https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg?auto=compress&cs=tinysrgb&h=350'
     }
 }
 

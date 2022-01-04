@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './AddPost.module.css';
 
-const AddPost = () => {
+const AddPost = (props) => {
   return (
     <div>
       <textarea></textarea>
