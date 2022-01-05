@@ -16,7 +16,7 @@ function App(props) {
         <div className='app-wrapper-content'>
           <Routes>
             <Route path='/' exact element={<Mainpage state={props.state.mainPage} />} />
-            <Route path='/profile' element={<Profile profileData={props.state.profileData} />} />
+            <Route path='/profile' element={<Profile profileData={props.state.profileData} posts={props.state.mainPage.posts} />} />
             <Route path='/friends' element={<Friends state={props.state.friendsPage} />} />
             <Route path='/chats' element={<Chats state={props.state.chatsPage} />} />
           </Routes>

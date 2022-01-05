@@ -7,7 +7,8 @@ function Mainpage(props) {
     return (
         <div>
             <AddPost />
-            <Posts state={props.state} />
+            <h3>Posts</h3>
+            <Posts posts={props.state.posts} />
         </div>
     );
 }

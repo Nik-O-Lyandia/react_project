@@ -40,7 +40,11 @@ let state = {
         logo: logo
     },
     profileData: {
-        imgAddress: 'https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg?auto=compress&cs=tinysrgb&h=350'
+        imgAddress: 'https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg?auto=compress&cs=tinysrgb&h=350',
+        myPosts: {
+            id: 2,
+            id: 4
+        }
     }
 }
 
