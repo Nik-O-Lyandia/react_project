@@ -9,7 +9,7 @@ const FriendItem = (props) => {
     <img src='https://html5css.ru/howto/img_avatar.png' />
     <NavLink to={path}>{props.name + ' ' + props.surname}</NavLink>
     <div>
-      <NavLink to={path}>Write message</NavLink>
+      <NavLink to={"/chats/" + props.id}>Write message</NavLink>
     </div>
   </div>
 }
