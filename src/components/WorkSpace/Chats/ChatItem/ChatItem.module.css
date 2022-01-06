@@ -1,30 +1,9 @@
-.content {
-  grid-area: c;
-  background-color: rgb(177, 244, 253);
+.userName {
+  margin-bottom: 10px;
 }
 
-.item {
-  color: rgb(255, 47, 64);
-}
-
-.dialogs {
-  display: grid;
-  grid-template-columns: 2fr 10fr;
-}
-
-.dialogsItems {
-  padding: 10px;
-  color: white;
-}
-
-.dialogsItems .active {
-  color: rgb(255, 47, 64);
-}
-
-.messages {
-  padding: 10px;
-}
-
-.messages .message {
-  color: white;
+.userName a {
+  text-decoration: none;
+  font-size: 1.5em;
+  color: black;
 }

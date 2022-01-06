@@ -3,11 +3,14 @@ import style from './ChatItem.module.css';
 import { NavLink } from 'react-router-dom';
 
 const ChatItem = (props) => {
-  let path = "/chats/" + props.id;
+  const path = '/chats/' + props.id;
 
-  return <div className={style.dialog + ' ' + style.active}>
-    <NavLink to={path}>{props.name}</NavLink>
-  </div>
-}
+  return (
+    <div className={style.userName}>
+      <NavLink to={path}>{props.name}</NavLink>
+      {/* <div className={style.lastMessage}></div> */}
+    </div>
+  );
+};
 
 export default ChatItem;
