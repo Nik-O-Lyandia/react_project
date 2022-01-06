@@ -2,6 +2,21 @@
   grid-area: c;
 }
 
-.item {
-  color: rgb(255, 47, 64);
+.userAvatar {
+  width: 15%;
+  margin-right: 20px;
+}
+
+.userAvatar img {
+  width: 100%;
+}
+
+.infoContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.postsHeading {
+  text-align: center;
+  font-size: 1.6em;
 }
