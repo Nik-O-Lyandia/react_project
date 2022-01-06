@@ -3,18 +3,15 @@ import style from './Posts.module.css';
 import Post from './Post/Post';
 
 const Posts = (props) => {
-
-  let postsElements =
-    props.posts.map(p => <Post message={p.message} likesCount={p.likesCount} />);
+  const postsElements = props.posts.map((p, i) => (
+    <Post message={p.message} likesCount={p.likesCount} key={i} />
+  ));
 
   return (
     <div className={style.postsBlock}>
-      <div className={style.posts}>
-        {postsElements}
-      </div>
+      <div className={style.posts}>{postsElements}</div>
     </div>
-  )
-
-}
+  );
+};
 
 export default Posts;

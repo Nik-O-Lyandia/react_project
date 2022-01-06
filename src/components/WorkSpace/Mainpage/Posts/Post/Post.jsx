@@ -4,17 +4,15 @@ import style from './Post.module.css';
 const Post = (props) => {
   return (
     <div className={style.item}>
-      <img src='https://html5css.ru/howto/img_avatar.png' />
-      <div>
-        {props.message}
+      <div className={style.post}>
+        <img src="https://html5css.ru/howto/img_avatar.png" alt="avatar" />
+        <div className={style.message}>{props.message}</div>
       </div>
       <div>
-        <span>like</span>
-        <span>   {props.likesCount}</span>
+        <div className={style.likes}>likes: {props.likesCount}</div>
       </div>
     </div>
-  )
-
-}
+  );
+};
 
 export default Post;
