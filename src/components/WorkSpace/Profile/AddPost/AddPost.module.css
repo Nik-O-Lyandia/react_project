@@ -1,0 +1,45 @@
+.container {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0.5em;
+}
+
+.postContent {
+  flex: 9;
+  outline: none;
+  border: 3px solid black;
+  border-radius: 10px 0px 0px 10px;
+  font-size: 1.5em;
+  padding: 10px;
+  transition-duration: 0.5s;
+}
+
+.postContent:focus {
+  border-color: rgb(5, 85, 160);
+}
+
+.postContent:hover {
+  transform: rotate(-1deg);
+}
+
+.addPostBtn {
+  flex: 3;
+  font-size: 1.5em;
+  border: 3px solid black;
+  border-radius: 0px 10px 10px 0px;
+  background-color: rgb(82, 138, 223);
+  color: #fff;
+  min-height: 50px;
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+
+.addPostBtn:hover {
+  transform: rotate(2deg);
+}
+
+.addPostBtn:active {
+  transform: scale(0.98);
+}
