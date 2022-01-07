@@ -6,12 +6,16 @@
 
 .post {
   font-size: 1.3em;
-  display: flex;
-  flex-direction: row;
+  display: grid;
   text-align: justify;
+  grid-template-areas:  "image  username"
+                        "image  message";
+  grid-template-rows: 60px 1fr;
+  grid-template-columns: 60px 1fr;
 }
 
 .message {
+  grid-area: message;
   word-break: break-all;
   font-family: 'Spline Sans', sans-serif;
 }
@@ -22,9 +26,23 @@
   margin-right: 10px;
 }
 
+.image {
+  grid-area: image;
+}
+
 .likes {
   text-align: right;
   font-size: 1.3em;
   font-family: 'Spline Sans', sans-serif;
   font-weight: 500;
+}
+
+.username {
+  grid-area: username;
+  font-size: 1.3em;
+}
+
+.username div {
+  display: inline-block;
+  vertical-align: middle;
 }

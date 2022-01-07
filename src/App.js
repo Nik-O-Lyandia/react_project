@@ -8,8 +8,8 @@ import Chats from './components/WorkSpace/Chats/Chats';
 import Chat from './components/WorkSpace/Chats/Chat/Chat';
 import Mainpage from './components/WorkSpace/Mainpage/Mainpage';
 
-function App({ state }) {
-  const userId = state.user.id;
+function App({ state, addPost }) {
+  const userId = state.users[0].id;
   const posts = state.posts;
   const userPosts = posts.filter((p) => p.userId === userId);
 
@@ -22,11 +22,11 @@ function App({ state }) {
         <Navbar />
         <div className="app-wrapper-content">
           <Routes>
-            <Route path="/" exact element={<Mainpage posts={friendPosts} />} />
+            <Route path="/" exact element={<Mainpage users={state.users} posts={posts} />} />
             <Route
               path="/profile"
               element={
-                <Profile profileData={state.profileData} posts={userPosts} />
+                <Profile profileData={state.profileData} users={state.users} posts={userPosts} addPost={addPost} />
               }
             />
             <Route

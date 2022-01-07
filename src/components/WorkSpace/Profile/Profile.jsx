@@ -3,7 +3,7 @@ import Posts from '../Mainpage/Posts/Posts';
 import AddPost from './AddPost/AddPost';
 import style from './Profile.module.css';
 
-const Profile = ({ profileData, posts }) => {
+const Profile = ({ profileData, users, posts, addPost }) => {
   return (
     <div className={style.content}>
       <div className={style.infoContainer}>
@@ -13,9 +13,9 @@ const Profile = ({ profileData, posts }) => {
         <div>description</div>
       </div>
       <div className={style.postsHeading}>My Posts</div>
-      <AddPost />
+      <AddPost addPost={addPost} />
       <div>
-        <Posts posts={posts} />
+        <Posts users={users} posts={posts} />
       </div>
     </div>
   );

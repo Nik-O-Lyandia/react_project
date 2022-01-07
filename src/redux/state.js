@@ -1,9 +1,12 @@
 import logo from '../imgs/flat_pink_logo.png';
+import {rerenderEntireTree} from "../render";
 
 let state = {
-  user: {
-    id: 1,
-  },
+  users: [
+    {id: 1, username: "Nik"},
+    {id: 2, username: "Not Nik"},
+    {id: 3, username: "No, I'm Nik"}
+  ],
   posts: [
     {
       userId: 1,
@@ -12,8 +15,8 @@ let state = {
         'Hi, how are you?sdfsfqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqsdfsdfsdfsdfsdfqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq sdfdddddddddddddddddddd',
       likesCount: 12,
     },
-    { userId: 1, id: 2, message: "It's my first post", likesCount: 11 },
-    { userId: 2, id: 3, message: 'Blabla', likesCount: 11 },
+    { userId: 1, id: 2, message: "It's my first post", likesCount: 15 },
+    { userId: 2, id: 3, message: 'Blabla', likesCount: 1 },
     { userId: 3, id: 4, message: 'Dada', likesCount: 11 },
   ],
   chatsPage: {
@@ -53,5 +56,16 @@ let state = {
       'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png',
   },
 };
+
+export let addPost = (postMessage) => {
+  let newPost = {
+      id: state.posts.at(-1).id + 1,
+      userId: 1,
+      message: postMessage,
+      likesCount: 0
+  };
+  state.posts.push(newPost);
+  rerenderEntireTree(state);
+}
 
 export default state;

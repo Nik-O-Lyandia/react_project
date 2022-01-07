@@ -2,8 +2,15 @@
   grid-area: h;
   background-color: rgb(92, 170, 243);
   padding: 5px;
+  display: flex;
+  align-items: center;
 }
 
 .header img {
   height: 100%;
+}
+
+.header .webName {
+  font-size: x-large;
+  font-family: 'Impact', 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
 }
