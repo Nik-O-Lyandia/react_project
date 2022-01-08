@@ -22,16 +22,25 @@ function App({ state, addPost }) {
         <Navbar />
         <div className="app-wrapper-content">
           <Routes>
-            <Route path="/" exact element={<Mainpage users={state.users} posts={posts} />} />
+            <Route
+              path="/"
+              exact
+              element={<Mainpage users={state.users} posts={friendPosts} />}
+            />
             <Route
               path="/profile"
               element={
-                <Profile profileData={state.profileData} users={state.users} posts={userPosts} addPost={addPost} />
+                <Profile
+                  profileData={state.profileData}
+                  users={state.users}
+                  posts={userPosts}
+                  addPost={addPost}
+                />
               }
             />
             <Route
               path="/friends"
-              element={<Friends state={state.friendsPage} />}
+              element={<Friends friends={state.friendsPage.friends} />}
             />
             <Route path="/chats" element={<Chats state={state.chatsPage} />} />
             <Route path="/chats/:chatId" element={<Chat />} />
