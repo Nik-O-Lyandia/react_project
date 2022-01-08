@@ -1,11 +1,11 @@
 import logo from '../imgs/flat_pink_logo.png';
-import {rerenderEntireTree} from "../render";
+import { rerenderEntireTree } from '../render';
 
 let state = {
   users: [
-    {id: 1, username: "Nik"},
-    {id: 2, username: "Not Nik"},
-    {id: 3, username: "No, I'm Nik"}
+    { id: 1, username: 'Nik' },
+    { id: 2, username: 'Not Nik' },
+    { id: 3, username: "No, I'm Nik" },
   ],
   posts: [
     {
@@ -57,15 +57,15 @@ let state = {
   },
 };
 
-export let addPost = (postMessage) => {
-  let newPost = {
-      id: state.posts.at(-1).id + 1,
-      userId: 1,
-      message: postMessage,
-      likesCount: 0
+export const addPost = (postMessage) => {
+  const newPost = {
+    id: state.posts.at(-1).id + 1,
+    userId: 1,
+    message: postMessage,
+    likesCount: 0,
   };
   state.posts.push(newPost);
   rerenderEntireTree(state);
-}
+};
 
 export default state;

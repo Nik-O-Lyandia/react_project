@@ -2,7 +2,7 @@
   grid-area: n;
   /* background-color: rgb(166, 95, 184); */
   background-color: rgb(168, 235, 173);
-  padding: 5px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
