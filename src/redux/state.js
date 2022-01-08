@@ -1,5 +1,6 @@
 import logo from '../imgs/flat_pink_logo.png';
-import {rerenderEntireTree} from "../render";
+
+let rerenderEntireTree = () => {}
 
 let state = {
   users: [
@@ -66,6 +67,10 @@ export let addPost = (postMessage) => {
   };
   state.posts.push(newPost);
   rerenderEntireTree(state);
+}
+
+export const initRerenderEntireTree = (observer) => {
+  rerenderEntireTree = observer;
 }
 
 export default state;
