@@ -10,7 +10,12 @@ import Mainpage from './components/WorkSpace/Mainpage/Mainpage';
 
 function App({ state, addPost }) {
   const userId = state.users[0].id;
-  const posts = state.posts;
+  const posts = state.posts.map((p) => ({
+    ...p,
+    userName: state.users.find((u) => u.id === p.userId).userName,
+  }));
+  console.log(state.users);
+
   const userPosts = posts.filter((p) => p.userId === userId);
 
   const friendPosts = posts.filter((p) => p.userId !== userId);
@@ -22,17 +27,12 @@ function App({ state, addPost }) {
         <Navbar />
         <div className="app-wrapper-content">
           <Routes>
-            <Route
-              path="/"
-              exact
-              element={<Mainpage users={state.users} posts={friendPosts} />}
-            />
+            <Route path="/" exact element={<Mainpage posts={friendPosts} />} />
             <Route
               path="/profile"
               element={
                 <Profile
                   profileData={state.profileData}
-                  users={state.users}
                   posts={userPosts}
                   addPost={addPost}
                 />
