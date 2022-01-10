@@ -4,7 +4,7 @@ import style from './Chats.module.css';
 
 const Chats = (props) => {
   const chatsElements = props.state.chats.map((d, i) => (
-    <ChatItem name={d.name} id={d.id} />
+    <ChatItem name={d.name} id={d.id} key={d.id} />
   ));
 
   return (

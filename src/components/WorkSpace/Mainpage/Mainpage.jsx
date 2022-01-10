@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react';
 import style from './Mainpage.module.css';
 import Posts from './Posts/Posts';
 
