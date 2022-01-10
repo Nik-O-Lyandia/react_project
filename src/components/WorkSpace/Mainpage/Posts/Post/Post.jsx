@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './Post.module.css';
 
-const Post = ({ userName, message, likesCount }) => {
+const Post = ({ userName, text, likesCount }) => {
   return (
     <div className={style.item}>
       <div className={style.post}>
@@ -11,7 +11,7 @@ const Post = ({ userName, message, likesCount }) => {
         <div className={style.username}>
           <div>{userName}</div>
         </div>
-        <div className={style.message}>{message}</div>
+        <div className={style.message}>{text}</div>
       </div>
       <div>
         <div className={style.likes}>likes: {likesCount}</div>

@@ -6,7 +6,7 @@ const Posts = ({ posts }) => {
   const postsElements = posts.map((p, i) => (
     <Post
       userName={p.userName}
-      message={p.message}
+      text={p.text}
       likesCount={p.likesCount}
       key={i}
     />

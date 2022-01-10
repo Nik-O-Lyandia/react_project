@@ -1,29 +1,23 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import style from './AddPost.module.css';
 
-const AddPost = ({ newPostText, dispatch }) => {
-  const newPostElement = React.createRef();
+const AddPost = ({ addPost }) => {
+  const postTextRef = useRef();
 
-  const addPostLocal = () => {
-    dispatch({ type: 'ADD_POST' });
+  const addPostOnClick = () => {
+    addPost(postTextRef.current.value);
+    postTextRef.current.value = '';
   };
 
-  const onPostChange = () => {
-    let text = newPostElement.current.value;
-    dispatch({ type: 'UPDATE_NEW_POST_TEXT', newText: text});
-  }
   return (
     <div className={style.container}>
       <textarea
         className={style.postContent}
-        ref={newPostElement}
-        onChange={onPostChange}
-        value={newPostText}
+        ref={postTextRef}
+        placeholder={'New Post text...'}
       />
 
-      <button
-        className={style.addPostBtn}
-        onClick={addPostLocal}>
+      <button className={style.addPostBtn} onClick={addPostOnClick}>
         Add post
       </button>
     </div>

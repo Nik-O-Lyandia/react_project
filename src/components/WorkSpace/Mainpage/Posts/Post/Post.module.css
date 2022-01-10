@@ -11,7 +11,7 @@
   grid-template-areas:
     'image  username'
     'image  message';
-  grid-template-rows: 60px 1fr;
+  grid-template-rows: 55px 1fr;
   grid-template-columns: 1fr 14fr;
   background-color: rgb(167, 211, 247);
   box-shadow: 2px 5px 10px rgb(148, 148, 148);

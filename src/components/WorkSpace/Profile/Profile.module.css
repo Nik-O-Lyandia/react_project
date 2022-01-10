@@ -2,6 +2,11 @@
   grid-area: c;
 }
 
+.postsHeading {
+  text-align: center;
+  font-size: 1.6em;
+}
+
 .userAvatar {
   width: 15%;
   margin-right: 20px;
@@ -11,12 +16,26 @@
   width: 100%;
 }
 
-.infoContainer {
+.infoAndAvatar {
   display: flex;
   flex-direction: row;
 }
 
-.postsHeading {
-  text-align: center;
-  font-size: 1.6em;
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.userName {
+  font-size: 2em;
+}
+
+.description {
+  font-size: 1.5em;
+  font-style: italic;
+}
+
+.email {
+  font-size: 1.3em;
 }
