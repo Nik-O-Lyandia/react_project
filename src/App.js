@@ -8,7 +8,7 @@ import Chats from './components/WorkSpace/Chats/Chats';
 import Chat from './components/WorkSpace/Chats/Chat/Chat';
 import Mainpage from './components/WorkSpace/Mainpage/Mainpage';
 
-function App({ state, addPost, updateNewPostText }) {
+function App({ state, dispatch }) {
   const userId = state.users[0].id;
   const posts = state.posts;
   const userPosts = posts.filter((p) => p.userId === userId);
@@ -34,9 +34,8 @@ function App({ state, addPost, updateNewPostText }) {
                   profileData={state.profileData}
                   users={state.users}
                   posts={userPosts}
-                  addPost={addPost}
-                  updateNewPostText={updateNewPostText}
                   newPostText={state.newPostText}
+                  dispatch={dispatch}
                 />
               }
             />

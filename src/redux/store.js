@@ -60,23 +60,29 @@ let store = {
     return this._state;
   },
   _rerenderEntireTree() { },
-  addPost() {
-    const newPost = {
-      id: this._state.posts.at(-1).id + 1,
-      userId: 1,
-      message: this._state.newPostText,
-      likesCount: 0,
-    };
-    this._state.posts.push(newPost);
-    this._state.newPostText = '';
-    this._rerenderEntireTree(this._state);
-  },
-  updateNewPostText(newText) {
-      this._state.newPostText = newText;
-      this._rerenderEntireTree(this._state);
-  },
   initRerenderEntireTree(observer) {
     this._rerenderEntireTree = observer;
+  },
+  dispatch(action) {
+    switch (action.type) {
+      case 'ADD_POST':
+        const newPost = {
+          id: this._state.posts.at(-1).id + 1,
+          userId: 1,
+          message: this._state.newPostText,
+          likesCount: 0,
+        };
+        this._state.posts.push(newPost);
+        this._state.newPostText = '';
+        this._rerenderEntireTree(this._state);
+        break;
+      case 'UPDATE_NEW_POST_TEXT':
+        this._state.newPostText = action.newText;
+        this._rerenderEntireTree(this._state);
+        break;
+      default:
+        break;
+    }
   }
 };
 

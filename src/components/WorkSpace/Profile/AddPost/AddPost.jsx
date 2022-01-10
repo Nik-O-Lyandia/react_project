@@ -1,16 +1,16 @@
 import React from 'react';
 import style from './AddPost.module.css';
 
-const AddPost = ({ addPost, updateNewPostText, newPostText }) => {
+const AddPost = ({ newPostText, dispatch }) => {
   const newPostElement = React.createRef();
 
   const addPostLocal = () => {
-    addPost();
+    dispatch({ type: 'ADD_POST' });
   };
 
   const onPostChange = () => {
     let text = newPostElement.current.value;
-    updateNewPostText(text);
+    dispatch({ type: 'UPDATE_NEW_POST_TEXT', newText: text});
   }
   return (
     <div className={style.container}>
