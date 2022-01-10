@@ -8,7 +8,7 @@ import Chats from './components/WorkSpace/Chats/Chats';
 import Chat from './components/WorkSpace/Chats/Chat/Chat';
 import Mainpage from './components/WorkSpace/Mainpage/Mainpage';
 
-function App({ state, addPost }) {
+function App({ state, dispatch }) {
   const userId = state.users[0].id;
   const posts = state.posts.map((p) => ({
     ...p,
@@ -33,7 +33,8 @@ function App({ state, addPost }) {
                 <Profile
                   profileData={state.profileData}
                   posts={userPosts}
-                  addPost={addPost}
+                  newPostText={state.newPostText}
+                  dispatch={dispatch}
                 />
               }
             />
