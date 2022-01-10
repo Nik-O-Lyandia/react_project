@@ -14,7 +14,7 @@
 
 .item a.activeLink {
   font-size: 1.5em;
-  font-family: 'Spline Sans', sans-serif;
+  /* font-family: 'Spline Sans', sans-serif; */
   font-weight: 500;
   color: black;
   text-decoration: none;

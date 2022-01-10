@@ -14,7 +14,6 @@ function App({ state, addPost }) {
     ...p,
     userName: state.users.find((u) => u.id === p.userId).userName,
   }));
-  console.log(state.users);
 
   const userPosts = posts.filter((p) => p.userId === userId);
 
