@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import style from './Mainpage.module.css';
 import Posts from './Posts/Posts';
 
-function Mainpage({ users, posts }) {
+function Mainpage({ posts }) {
   return (
     <div>
       <div className={style.postsHeading}>Posts</div>
-      <Posts users={users} posts={posts} />
+      <Posts posts={posts} />
     </div>
   );
 }

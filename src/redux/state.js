@@ -4,9 +4,9 @@ let rerenderEntireTree = () => {};
 
 let state = {
   users: [
-    { id: 1, username: 'Nik' },
-    { id: 2, username: 'Not Nik' },
-    { id: 3, username: "No, I'm Nik" },
+    { id: 1, userName: 'Nik' },
+    { id: 2, userName: 'Not Nik' },
+    { id: 3, userName: "No, I'm Nik" },
   ],
   posts: [
     {

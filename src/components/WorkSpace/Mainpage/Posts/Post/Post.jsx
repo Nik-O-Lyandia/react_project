@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './Post.module.css';
 
-const Post = (props) => {
+const Post = ({ userName, message, likesCount }) => {
   return (
     <div className={style.item}>
       <div className={style.post}>
@@ -9,12 +9,12 @@ const Post = (props) => {
           <img src="https://html5css.ru/howto/img_avatar.png" alt="avatar" />
         </div>
         <div className={style.username}>
-          <div>{props.users[0].username}</div>
+          <div>{userName}</div>
         </div>
-        <div className={style.message}>{props.message}</div>
+        <div className={style.message}>{message}</div>
       </div>
       <div>
-        <div className={style.likes}>likes: {props.likesCount}</div>
+        <div className={style.likes}>likes: {likesCount}</div>
       </div>
     </div>
   );
