@@ -1,6 +1,6 @@
-import style from './ChatItem.module.css';
+import style from './Message.module.css';
 
-const ChatItem = ({ userName, message, own }) => {
+const Message = ({ userName, message, own }) => {
   return (
     <div className={`${style.container} ${own ? style.own : ''}`}>
       <div className={style.userName}>{userName}</div>
@@ -9,4 +9,4 @@ const ChatItem = ({ userName, message, own }) => {
   );
 };
 
-export default ChatItem;
+export default Message;

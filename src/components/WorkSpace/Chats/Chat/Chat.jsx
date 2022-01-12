@@ -1,8 +1,8 @@
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { v4 } from 'uuid';
 import style from './Chat.module.css';
-import ChatItem from './ChatItem';
+import MessageList from './MessageList/MessageList';
+import Inputs from './Inputs/Inputs';
 
 const Chat = () => {
   const initMessages = [
@@ -59,56 +59,26 @@ const Chat = () => {
   ];
 
   const [messages, setMessages] = useState(initMessages);
-  const msgRef = useRef();
-  useEffect(() => {
-    console.log(messages);
-  }, [messages]);
 
-  const sendMsgBtnOnClick = () => {
+  const sendMsgBtnOnClick = (msg) => {
     const newMsg = {
       id: messages.length + 1,
       userId,
       userName: 'Me',
-      message: msgRef.current.value,
+      message: msg,
     };
-    console.log(newMsg);
 
     setMessages([...messages, newMsg]);
-    msgRef.current.value = '';
   };
 
   const userId = useSelector((state) => state.user.id);
 
   return (
     <div className={style.container}>
-      <div className={style.messageList}>
-        {messages.map((m) => (
-          <ChatItem
-            userName={m.userName}
-            message={m.message}
-            own={userId === m.userId}
-            key={m.id}
-          />
-        ))}
-      </div>
-      <div className={style.inputs}>
-        <textarea
-          className={style.msgField}
-          placeholder="message..."
-          ref={msgRef}
-          onKeyDown={(e) =>
-            e.key === 'Enter' && e.ctrlKey && sendMsgBtnOnClick()
-          }
-        ></textarea>
-        <button
-          type="button"
-          className={style.sendBtn}
-          onClick={sendMsgBtnOnClick}
-        >
-          {/* Send &#10004; */}
-          Send
-        </button>
-      </div>
+      <MessageList
+        messages={messages.map((m) => ({ ...m, own: m.userId === userId }))}
+      />
+      <Inputs onMsgSubmit={sendMsgBtnOnClick} />
     </div>
   );
 };
