@@ -8,14 +8,16 @@ import Chats from './components/WorkSpace/Chats/Chats';
 import Chat from './components/WorkSpace/Chats/Chat/Chat';
 import Mainpage from './components/WorkSpace/Mainpage/Mainpage';
 import { useSelector } from 'react-redux';
+import FriendProfile from './components/WorkSpace/Friends/FriendProfile/FriendProfile';
 
 function App({ config }) {
   const userId = useSelector((state) => state.user.id);
-
   const posts = useSelector((state) => state.posts);
+  const friends = useSelector((state) => state.friends);
 
   const userPosts = posts.filter((p) => p.userId === userId);
   const friendPosts = posts.filter((p) => p.userId !== userId);
+
   const profileData = useSelector((state) => state.profile);
 
   return (
@@ -37,7 +39,15 @@ function App({ config }) {
             />
             <Route
               path="/friends"
-              element={<Friends friends={config.friendsPage.friends} />}
+              element={<Friends friends={friends} />}
+            />
+            <Route
+              path="/friends/:friendId"
+              element={
+                <FriendProfile
+                  posts={friendPosts}
+                />
+              } 
             />
             <Route path="/chats" element={<Chats state={config.chatsPage} />} />
             <Route path="/chats/:chatId" element={<Chat />} />

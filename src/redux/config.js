@@ -26,7 +26,11 @@ export const config = {
   },
   friendsPage: {
     friends: [
-      { id: 1, name: 'Dima', surname: 'Dimov' },
+      {
+        id: 1,
+        name: 'Dima',
+        surname: 'Dimov'
+      },
       { id: 2, name: 'Yaroslav', surname: 'Koval' },
       { id: 3, name: 'Dima', surname: 'Smirnov' },
       { id: 4, name: 'Uliya', surname: 'Timoshenko' },
