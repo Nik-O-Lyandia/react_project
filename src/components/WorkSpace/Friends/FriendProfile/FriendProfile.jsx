@@ -5,12 +5,15 @@ import Posts from '../../Mainpage/Posts/Posts';
 import style from './FriendProfile.module.css';
 
 const FriendProfile = () => {
-  let { friendId } = useParams();
-  let profileData = useSelector((state) =>
-    state.friends.find((f) => f.userId === parseInt(friendId))
+  const { friendId } = useParams();
+
+  const profileData = useSelector((state) =>
+    state.friends.find((f) => f.id === friendId)
   );
-  let posts = useSelector((state) =>
-    state.posts.filter((p) => p.userId === parseInt(friendId))
+
+  // TODO: bug, fix it
+  const posts = useSelector((state) =>
+    state.posts.filter((p) => p.userId === friendId)
   );
 
   return (

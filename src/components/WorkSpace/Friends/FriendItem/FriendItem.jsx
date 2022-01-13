@@ -3,7 +3,7 @@ import style from './FriendItem.module.css';
 import { NavLink } from 'react-router-dom';
 
 const FriendItem = (props) => {
-  let path = '/friends/' + props.userId;
+  let path = '/friends/' + props.id;
 
   return (
     <div className={style.item}>
