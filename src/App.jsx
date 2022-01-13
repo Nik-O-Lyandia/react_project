@@ -9,6 +9,7 @@ import Chat from './components/WorkSpace/Chats/Chat/Chat';
 import Mainpage from './components/WorkSpace/Mainpage/Mainpage';
 import { useSelector } from 'react-redux';
 import FriendProfile from './components/WorkSpace/Friends/FriendProfile/FriendProfile';
+import Login from './components/Auth/Login/Login';
 
 function App({ config }) {
   const userId = useSelector((state) => state.user.id);
@@ -37,20 +38,14 @@ function App({ config }) {
                 />
               }
             />
-            <Route
-              path="/friends"
-              element={<Friends friends={friends} />}
-            />
+            <Route path="/friends" element={<Friends friends={friends} />} />
             <Route
               path="/friends/:friendId"
-              element={
-                <FriendProfile
-                  posts={friendPosts}
-                />
-              } 
+              element={<FriendProfile posts={friendPosts} />}
             />
             <Route path="/chats" element={<Chats state={config.chatsPage} />} />
             <Route path="/chats/:chatId" element={<Chat />} />
+            <Route path="/login" element={<Login />} />
           </Routes>
         </div>
       </div>

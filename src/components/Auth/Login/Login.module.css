@@ -1,0 +1,34 @@
+.container {
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginForm {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.loginForm > div {
+  font-size: 1.7em;
+  font-family: 'Spline Sans', sans-serif;
+}
+
+.loginForm > input {
+  font-size: 1.5em;
+  font-family: 'Comic Neue', cursive;
+
+  padding: 10px;
+  outline: none;
+  border: 3px solid rgb(64, 154, 238);
+  border-radius: 10px;
+  transition-duration: 0.2s;
+}
+
+.loginForm > input:hover {
+  border: 3px solid rgb(0, 132, 255);
+}
