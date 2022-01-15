@@ -3,9 +3,8 @@ const { registerControllers } = require('./controllers');
 
 const app = fastify({ logger: false });
 
-app.register(require('fastify-cors'), {
-  // put your options here
-});
+app.register(require('fastify-cors'), {});
+app.register(require('fastify-websocket'));
 
 const start = async () => {
   registerControllers(app);

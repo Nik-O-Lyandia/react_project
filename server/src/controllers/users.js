@@ -1,7 +1,7 @@
 const { UserService } = require('../services/users/user.service');
 
 const getAll = (req, reply) => {
-  const users = UserService.new().getUsers();
+  const users = UserService.new().getAll();
 
   return users;
 };

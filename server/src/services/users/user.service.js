@@ -1,19 +1,27 @@
-const { userRepository } = require('./user.repository');
+const { UserRepository } = require('./user.repository');
 
 class UserService {
   constructor(userRepo) {
     this.userRepo = userRepo;
   }
 
-  getUsers() {
-    return this.userRepo.getUsers().map((e) => ({ ...e, password: undefined }));
+  getAll() {
+    return this.userRepo.getAll().map((e) => ({ ...e, password: undefined }));
+  }
+
+  getById(id) {
+    return this.userRepo.getById(id);
+  }
+
+  getByEmail(email) {
+    return this.userRepo.getByEmail(email);
   }
 }
 
 module.exports = {
   UserService: {
-    new() {
-      return new UserService(userRepository);
+    new(userRepo) {
+      return new UserService(userRepo || UserRepository.new());
     },
   },
 };

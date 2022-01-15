@@ -7,9 +7,9 @@ import { set } from '../../../redux/actions/friends';
 const Friends = ({ friends }) => {
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(set());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(set());
+  // }, [dispatch]);
 
   const friendsElements = friends.map((f) => (
     <FriendItem

@@ -13,8 +13,8 @@ const Profile = ({ profileData, posts }) => {
     dispatch(
       addPost({
         id: uuid(),
-        userId: profileData.userId,
-        userName: profileData.userName,
+        userId: profileData.id,
+        userName: `${profileData.name} ${profileData.surname}`,
         text,
         likesCount: 0,
       })
@@ -28,7 +28,9 @@ const Profile = ({ profileData, posts }) => {
           <img src={profileData.imgAddress} alt="avatar" />
         </div>
         <div className={style.infoContainer}>
-          <div className={style.userName}>{profileData.userName}</div>
+          <div
+            className={style.userName}
+          >{`${profileData.name} ${profileData.surname}`}</div>
           <div className={style.description}>{profileData.description}</div>
           <div className={style.email}>{profileData.email}</div>
         </div>
